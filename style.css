@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  /* ? (main BG) */
+  --dark-blue-700: hsl(217, 54%, 11%);
+  /* ? (card BG) */
+  --dark-blue-500: hsl(216, 50%, 16%);
+  /* ? (line) */
+  --dark-blue-400: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+}
+p {
+  color: var(--Soft-blue);
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  background-color: var(--dark-blue-700);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 330px;
+  background-color: var(--dark-blue-500);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-container {
+  padding: 1.1rem;
+}
+
+.card_image {
+  position: relative;
+  display: flex;
+}
+
+.card_image:hover:after {
+  content: "";
+  inset: 0;
+  background-color: hsla(178, 100%, 50%, 0.413);
+  position: absolute;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-image: url("images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.card_image img {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: inherit;
+  object-fit: cover;
+}
+
+.card .title {
+  margin-block: 1rem;
+  font-size: 600;
+  color: var(--White);
+  transition: color 300ms ease;
+}
+
+.card .title:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+
+.card_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.4rem;
+}
+
+.card_info .amount {
+  color: var(--Cyan);
+  font-weight: 400;
+  font-size: 0.8rem;
+  position: relative;
+  margin-left: 25px;
+}
+
+.card_info .amount::before {
+  content: url("images/icon-ethereum.svg");
+  position: absolute;
+  left: -25px;
+}
+
+.card_info .duration {
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.card_info .duration::before {
+  content: url("images/icon-clock.svg");
+  position: absolute;
+  left: -25px;
+}
+
+.creater_info {
+  display: flex;
+  align-items: center;
+  border-top: var(--dark-blue-400) 1px solid;
+  padding-top: 0.9rem;
+}
+
+.prfile_pic {
+  max-width: 30px;
+  border: var(--White) 1px solid;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.created_by {
+  font-size: 0.8rem;
+}
+
+.created_by span {
+  transition: color 300ms ease;
+  color: white;
+}
+.created_by span:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
